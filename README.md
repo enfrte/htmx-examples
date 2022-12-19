@@ -1,2 +1,4 @@
 # htmx-examples
-examples of the htmx library 
+
+Examples of the htmx library 
+
