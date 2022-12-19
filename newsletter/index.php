@@ -13,7 +13,7 @@
 
 <table 
 	id="newsletter-table" 
-	hx-get="/htmx/get_newsletters.php" 
+	hx-get="/htmx-examples/newsletter/get_newsletters.php" 
 	hx-trigger="load" 
 	hx-target="#newsletter-table"
 	hx-swap="innerHTML">
