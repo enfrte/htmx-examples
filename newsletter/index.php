@@ -6,21 +6,47 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="https://unpkg.com/htmx.org@1.8.4" integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV" crossorigin="anonymous"></script>
+	<style>
+		.lds-dual-ring {
+			display: inline-block;
+			width: 28px;
+			height: 28px;
+			padding: 0 5px 0 5px;
+			}
+			.lds-dual-ring:after {
+			content: " ";
+			display: block;
+			width: 20x;
+			height: 20px;
+			margin: 2px;
+			border-radius: 50%;
+			border: 2px solid #fff;
+			border-color: #333 transparent #333 transparent;
+			animation: lds-dual-ring 1.2s linear infinite;
+			}
+			@keyframes lds-dual-ring {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
 </head>
 <body>
 
 <h1>Newsletter</h1>
 
-<table 
+<div 
 	id="newsletter-table" 
 	hx-get="/htmx-examples/newsletter/get_newsletters.php" 
-	hx-trigger="load" 
+	hx-trigger="load delay:1500" 
 	hx-target="#newsletter-table"
-	hx-swap="innerHTML">
-	<tr>
-		<td colspan="7">Loading newsletters...</td>
-	</tr>
-</table>
+	hx-swap="outerHTML">
+	<div class="lds-dual-ring"></div>
+	Loading newsletters... 
+</div>
 
 </body>
 </html>

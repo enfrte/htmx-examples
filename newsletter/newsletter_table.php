@@ -1,3 +1,4 @@
+<table id="newsletter-table">
   <tr>
     <th>ID</th>
     <th>Title</th>
@@ -18,3 +19,4 @@
     <td><?php echo $newsletter['modified_by']; ?></td>
   </tr>
   <?php endforeach; ?>
+</table>
