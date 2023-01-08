@@ -40,12 +40,22 @@
 
 <div 
 	id="newsletter-table" 
-	hx-get="/htmx-examples/newsletter/get_newsletters.php" 
-	hx-trigger="load delay:1500" 
+	hx-get="get_newsletters.php" 
+	hx-trigger="load" 
 	hx-target="#newsletter-table"
 	hx-swap="outerHTML">
 	<div class="lds-dual-ring"></div>
 	Loading newsletters... 
+</div>
+
+<div>
+	<button 
+		hx-get="get_newsletters.php" 
+		hx-trigger="click" 
+		hx-target="#newsletter-table"
+		hx-swap="outerHTML">
+		Reload newsletters
+	</button>
 </div>
 
 </body>

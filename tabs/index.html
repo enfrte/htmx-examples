@@ -16,31 +16,32 @@
 		.tab-button {
 			flex: 1;
 			border: none;
-			background-color: #eee;
+			background-color: pink;
 			padding: 10px;
 			font-size: 16px;
 			cursor: pointer;
 		}
 
 		.tab-button.active {
-			background-color: #fff;
+			background-color: greenyellow;
 		}
 	</style>
 
-	<title>Document</title>
+	<title>Tabs</title>
 </head>
 <body>
+	<h3>Navigate the tabs</h3>
 
 	<!-- HTML Markup -->
 	<div class="tabs">
-		<button class="tab-button" hx-get="/htmx/clicked.php" hx-target="#tab-content">Tab 1</button>
-		<button class="tab-button" hx-get="/htmx/tab2.html" hx-target="#tab-content">Tab 2</button>
-		<button class="tab-button" hx-get="/htmx/tab3.html" hx-target="#tab-content">Tab 3</button>
+		<button class="tab-button active" hx-get="/htmx-examples/clicked.php" hx-target="#tab-content">Tab 1</button>
+		<button class="tab-button" hx-get="tab_content_2.html" hx-target="#tab-content">Tab 2</button>
+		<button class="tab-button" hx-get="tab_content_3.html" hx-target="#tab-content">Tab 3</button>
 	</div>
 	
 	<div 
 		id="tab-content" 
-		hx-get="/htmx/clicked.php" 
+		hx-get="/htmx-examples/clicked.php" 
 		hx-trigger="load delay:100ms" 
 		hx-target="#tab-content" 
 		hx-swap="innerHTML">
@@ -53,7 +54,7 @@
 			tabButtons.forEach(function(button) {
 				button.addEventListener("click", function() {
 					tabButtons.forEach(function(button) {
-					button.classList.remove("active");
+						button.classList.remove("active");
 					});
 					this.classList.add("active");
 				});

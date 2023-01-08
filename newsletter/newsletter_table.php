@@ -1,6 +1,5 @@
 <table id="newsletter-table">
   <tr>
-    <th>ID</th>
     <th>Title</th>
     <th>Content</th>
     <th>Sticky</th>
@@ -10,7 +9,6 @@
   </tr>
   <?php foreach ($newsletters as $newsletter): ?>
   <tr>
-    <td><?php echo $newsletter['id']; ?></td>
     <td><?php echo $newsletter['title']; ?></td>
     <td><?php echo $newsletter['content']; ?></td>
     <td><?php echo $newsletter['sticky'] ? 'Yes' : 'No'; ?></td>
