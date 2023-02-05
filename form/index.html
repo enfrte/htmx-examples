@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://unpkg.com/htmx.org@1.8.4"
+			integrity="sha384-wg5Y/JwF7VxGk4zLsJEcAojRtlVp1FKKdGy1qN+OMtdq72WRvX/EdRdqg/LOhYeV"
+			crossorigin="anonymous"></script>
+	<title>Form example</title>
+</head>
+<body>
+	<p>Ajax request triggers can live outside of forms and point to one via a CSS query selector. They can even just reference various inputs.</p>
+	<h3>Greet or insult form</h3>
+	<hr>
+	<form id="greetIForm">
+		<p>Greet me</p>
+		<input type="hidden" name="type" value="greet">
+		<p><input type="text" name="name" placeholder="Enter your name"></p>
+	</form>
+	<hr>
+	<form id="insultForm">
+		<p>Insult me</p>
+		<input type="hidden" name="type" value="insult">
+		<p><input type="text" name="name" placeholder="Enter your name"></p>
+	</form>
+	<hr>
+	<div>
+		<button 
+			hx-post="/htmx-examples/form/greetInsultForm.php" 
+			hx-include="#greetIForm" 
+			hx-swap="innerHTML" 
+			hx-target="#result" 
+			type="button">
+			Greet
+		</button> 
+		<button 
+			hx-post="/htmx-examples/form/greetInsultForm.php" 
+			hx-include="#insultForm" 
+			hx-swap="innerHTML" 
+			hx-target="#result" 
+			type="button">
+			Insult
+		</button>
+	</div>
+	<h3 id="result"></h3>
+</body>
+</html>

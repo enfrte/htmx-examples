@@ -7,7 +7,7 @@
 		//sleep(1); // Simulate a delay
 		return Helper::renderTemplate('newsletter/newsletter_table.php', ['newsletters' => $newsletters]);
 	} 
-	catch (PDOException $e) {
+	catch (Exception $e) {
 		echo $e->getMessage();
 	}
 
